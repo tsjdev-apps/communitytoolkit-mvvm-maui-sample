@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CommunityToolkitMVVMMauiSample.ViewModels"
+             x:Class="CommunityToolkitMVVMMauiSample.Views.MainPage"
+             x:DataType="viewmodels:MainViewModel"
+             Title="Main Page"
+             Padding="16">
+    
+    <VerticalStackLayout Spacing="8">
+        <Entry Text="{Binding FirstName}"
+               Placeholder="First Name"/>
+        
+        <Entry Text="{Binding LastName}"
+               Placeholder="Last Name"/>
+        
+        <Label Text="{Binding FullName}" />
+        
+        <Button Text="Greet User"
+                Command="{Binding GreetCommand}" />
+
+        <ActivityIndicator WidthRequest="50"
+                           HeightRequest="50"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding IsLoading}"
+                           IsRunning="{Binding IsLoading}" />
+    </VerticalStackLayout>
+    
+</ContentPage>
